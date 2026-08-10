@@ -1,15 +1,30 @@
-# Cramele Odobești — fișa de brand
+# Casa Neacșu / Cramele Odobești — fișa de brand
 
 Sursă unică de adevăr pentru toți agenții de social media. Se citește prima,
 înainte de a scrie orice text.
+
+> **De clarificat, înainte de orice publicare:** materialele produse până acum
+> poartă numele „Cramele Odobești". Prezentarea internă folosește **Casa
+> Neacșu** ca nume al casei, cu Cramele Odobești ca unitate de producție.
+> Stabiliți care nume apare pe comunicare și cereți înlocuirea în toate
+> materialele — documente, imagini, clipuri.
 
 ---
 
 ## 1. Cine sunt
 
-Cramă din Odobești, județul Vrancea — una dintre cele mai vechi și mai întinse
-podgorii din România. Producție, condiționare și îmbuteliere, cu vie proprie și
-colaborări cu producători de struguri.
+Casa Neacșu, cu producția la Odobești, județul Vrancea — una dintre cele mai
+vechi și mai întinse podgorii din România. Producție, condiționare și
+îmbuteliere, cu vie proprie și colaborări cu producători de struguri.
+
+**Omul din spate: Lucian Neacșu**, unul dintre promotorii conceptului de vin
+BIO în România, cu peste 25 de ani de activitate în domeniu. Pentru el, BIO nu
+este o etichetă comercială, ci un mod de a lucra pământul și de a folosi
+responsabil resursele.
+
+Acesta este cel mai valoros material nefolosit din tot pachetul. Un fondator
+cu chip, nume și treizeci de ani de muncă în spate convinge mai mult decât
+orice text scris — pe TikTok și pe YouTube, în special.
 
 ## 2. Cele patru avantaje (ordinea contează)
 
@@ -44,8 +59,55 @@ Funcționează **numai** cât rămâne despre efortul cramei. Vezi secțiunea 6.
 | **Glia** | „glie" = pământ roditor | Șarbă alb sec |
 | **Hereditas** | gamă ecologică | Fetească Albă, Băbească Neagră |
 
-Alte game din portofoliu: Nora, Varius, Casa Neacșu, Vița de Vie, Grui.
+Alte serii din portofoliu, confirmate din prezentarea internă: **Inima**,
+**Koson**, **Grui**, **Vinuri de Poveste**, **Private Reserve**, **Casa Neacșu
+Rezervă**. Din site: Nora, Varius, Vița de Vie.
 Ambalare: sticlă clasică și bag-in-box.
+
+### Soiuri, pe categorii
+
+**Românești, în sistem BIO:** Fetească Regală, Fetească Albă, Fetească Neagră,
+Băbească Neagră, Băbească Gri, Crâmpoșie, Zghihară de Huși, Tămâioasă
+Românească, Șarbă, Cadarcă, Busuioacă de Bohotin.
+
+**Internaționale, în sistem BIO:** Chardonnay, Sauvignon Blanc, Muscat Ottonel,
+Riesling (Italian), Cabernet Sauvignon, Merlot.
+
+### Afirmații de poziționare din prezentarea internă
+
+Următoarele două se pot folosi, dar numai după ce sunt susținute cu date
+(suprafață certificată, volume, comparație cu alți producători). Sunt afirmații
+de tip „cel mai", deci primele care vor fi contestate public:
+
+- „cel mai important producător de vinuri BIO din România";
+- „crama românească cu cele mai multe soiuri românești pure în portofoliu".
+
+Varianta prudentă, folosită deja în materiale: *„printre primii din România
+care au lucrat ecologic suprafețe de peste 15 hectare"*.
+
+## 4b. Linia nefermentată — AQUA NATURA
+
+Sub brandul **AQUA NATURA** există două produse care **nu sunt băuturi
+alcoolice**:
+
+- **GEIA** — apă alcalină BIO. Izvoarele Putnei, județul Vrancea; extracție de
+  la 120 m; pH 7,9. Îmbuteliere 0,5 L și 2 L, cu 1,5 / 2,5 / 5 / 6 L în funcție
+  de cerere.
+- **ELIKSIR** — suc și siropuri BIO din cătină, pură sau în amestec.
+
+**De ce contează pentru social media:** restricțiile care blochează promovarea
+vinului nu se aplică acestor produse. Pentru GEIA și ELIKSIR se pot face
+reclame plătite pe TikTok și Meta, colaborări cu creatori și vânzare directă —
+adică exact instrumentele interzise pentru vin. Dacă bugetul de promovare
+trebuie să producă vânzări rapide, aici este drumul scurt.
+
+**Atenție la mențiunile de sănătate.** Formulările din prezentare — „neutralizează
+și lichefiază deșeurile acide", „imunostimulator", „antiinflamator",
+„cicatrizant", „citoprotector", „depurativ" — sunt mențiuni de sănătate pe
+alimente. Pe alimente sunt permise **doar** mențiunile autorizate din registrul
+european; cele de mai sus, cel mai probabil, nu sunt. Nu le preluați în
+comunicare fără verificare — riscul este identic cu cel de la vin, dar aici
+apare pe ambalaj, unde costă mult mai mult să îl corectezi.
 
 ## 5. Ton și voce
 
