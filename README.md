@@ -23,6 +23,17 @@ python motion_alert.py
 Implicit foloseste webcam-ul calculatorului (util ca sa testezi ca merge).
 Opreste-l cu `Ctrl+C`.
 
+## Test rapid de conexiune
+
+Inainte sa pornesti supravegherea continua, testeaza intai conexiunea cu
+`test_camera.py` - se conecteaza o singura data, salveaza o poza
+(`test_poza.jpg`) si iti spune clar daca a mers sau nu:
+
+```bash
+export CAMERA_SOURCE="rtsp://utilizator:parola@IP:554/Streaming/Channels/101"
+python test_camera.py
+```
+
 ## Cum il conectezi la camera ta reala
 
 Sistemul tau de camere are probabil un stream RTSP (verifica in setarile
