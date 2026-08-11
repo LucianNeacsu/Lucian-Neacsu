@@ -71,21 +71,56 @@ def fundal(photo):
     return tuple(sum(c[i] for c in zona) // n for i in range(3))
 
 
+def lumina(c):
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+
 def banner(spec):
     ph = Image.open(os.path.join(SRC, spec["foto"])).convert("RGB")
     baza = fundal(ph)
-    # ușor mai închis, ca textul să respire
-    ground = tuple(max(0, int(c * 0.82)) for c in baza)
+    deschis = lumina(baza) > 140
+
+    # pe fond închis coborâm puțin fundalul, ca textul să respire;
+    # pe fond deschis îl lăsăm aproape neatins, altfel apare cusătura
+    k = 0.985 if deschis else 0.82
+    ground = tuple(max(0, min(255, int(c * k))) for c in baza)
+
+    if deschis:
+        c_titlu, c_text, c_eb = (34, 30, 24), (104, 96, 84), GOLD_D
+        c_btn, c_btn_txt, c_sub = (34, 30, 24), (247, 243, 236), (140, 132, 120)
+    else:
+        c_titlu, c_text, c_eb = CREAM, MUTED, GOLD
+        c_btn, c_btn_txt, c_sub = GOLD, (28, 22, 16), (140, 132, 120)
 
     img = Image.new("RGB", (W, H), ground)
     d = ImageDraw.Draw(img)
 
     # gradient vertical discret
     for y in range(H):
-        k = 1.0 - 0.18 * (y / H)
-        d.line([(0, y), (W, y)], fill=tuple(int(c * k) for c in ground))
+        g = 1.0 - (0.06 if deschis else 0.18) * (y / H)
+        d.line([(0, y), (W, y)], fill=tuple(min(255, int(c * g)) for c in ground))
 
-    # fotografia, în dreapta, scalată pe înălțime
+    if spec.get("layout") == "fundal":
+        # fotografia acoperă tot bannerul; textul stă peste ea
+        sc = max(W / ph.width, H / ph.height)
+        big = ph.resize((int(ph.width * sc) + 1, int(ph.height * sc) + 1), Image.LANCZOS)
+        img.paste(big, (0, 0))
+        d = ImageDraw.Draw(img)
+    else:
+        _compune_foto(img, ph, spec)
+        d = ImageDraw.Draw(img)
+
+    # ---- coloana de text
+    _scrie_text(d, spec, c_titlu, c_text, c_eb, c_btn, c_btn_txt, c_sub)
+
+    os.makedirs(OUT, exist_ok=True)
+    p = os.path.join(OUT, spec["id"] + ".jpg")
+    img.save(p, "JPEG", quality=92, optimize=True)
+    print(f"  {p}")
+    return p
+
+
+def _compune_foto(img, ph, spec):
     scale = H / ph.height
     nw, nh = int(ph.width * scale), H
     ph2 = ph.resize((nw, nh), Image.LANCZOS)
@@ -100,27 +135,26 @@ def banner(spec):
     masca = masca.filter(ImageFilter.GaussianBlur(2))
     img.paste(ph2, (px, 0), masca)
 
-    d = ImageDraw.Draw(img)
 
-    # ---- coloana de text
+def _scrie_text(d, spec, c_titlu, c_text, c_eb, c_btn, c_btn_txt, c_sub):
     x0 = 68
     colw = spec.get("colw", 470)
 
     f_eb = fnt(SANS_B, 15)
-    y = 92
-    spaced(d, (x0, y), spec.get("eyebrow", "VINURI PURE ROMÂNEȘTI"), f_eb, GOLD, 3.2)
+    y = spec.get("ytop", 92)
+    spaced(d, (x0, y), spec.get("eyebrow", "VINURI PURE ROMÂNEȘTI"), f_eb, c_eb, 3.2)
     y += th(f_eb) + 26
 
     f_h = fnt(SERIF_B, spec.get("hsize", 44))
     hl = wrap(d, spec["titlu"], f_h, colw)
     for ln in hl:
-        d.text((x0, y), ln, font=f_h, fill=CREAM)
+        d.text((x0, y), ln, font=f_h, fill=c_titlu)
         y += th(f_h) * 1.24
     y += 16
 
     f_b = fnt(SANS, 17)
     for ln in wrap(d, spec["text"], f_b, colw):
-        d.text((x0, y), ln, font=f_b, fill=MUTED)
+        d.text((x0, y), ln, font=f_b, fill=c_text)
         y += th(f_b) * 1.55
     y += 26
 
@@ -129,58 +163,19 @@ def banner(spec):
     et = spec.get("cta", "Comandă pe site")
     bw = int(d.textlength(et, font=f_c)) + 52
     bh = 48
-    d.rectangle([x0, y, x0 + bw, y + bh], fill=GOLD)
-    d.text((x0 + 26, y + (bh - th(f_c)) / 2 - 2), et, font=f_c, fill=(28, 22, 16))
+    d.rectangle([x0, y, x0 + bw, y + bh], fill=c_btn)
+    d.text((x0 + 26, y + (bh - th(f_c)) / 2 - 2), et, font=f_c, fill=c_btn_txt)
     y += bh + 24
 
     # semnătura de jos
     f_s = fnt(SANS, 13)
     d.text((x0, H - 54), spec.get("subsol", "Casa Neacșu · vin din struguri ecologici · Consumă responsabil 18+"),
-           font=f_s, fill=(140, 132, 120))
-
-    os.makedirs(OUT, exist_ok=True)
-    p = os.path.join(OUT, spec["id"] + ".jpg")
-    img.save(p, "JPEG", quality=92, optimize=True)
-    print(f"  {p}")
-    return p
+           font=f_s, fill=c_sub)
 
 
 BANNERE = [
     {
-        "id": "01-hero-vinuri-de-poveste",
-        "foto": "vinuri-de-poveste.jpeg",
-        "eyebrow": "VINURI PURE ROMÂNEȘTI",
-        "titlu": "Basmele românești, îmbuteliate",
-        "text": "Balaur, Sânziana și Prâslea — trei vinuri, trei personaje, trei volume numerotate. "
-                "Din soiuri românești pure, lucrate ecologic din 2010.",
-        "cta": "Vezi colecția",
-        "hsize": 46,
-        "colw": 450,
-    },
-    {
-        "id": "02-koson",
-        "foto": "koson.jpeg",
-        "eyebrow": "VINURI DE AUR",
-        "titlu": "Poartă numele unei monede de aur dacice",
-        "text": "Koson — Cabernet Sauvignon, Rosé și Fetească Albă. "
-                "Aceeași grijă în vie ca la vinurile de colecție, la un preț de fiecare zi.",
-        "cta": "Comandă Koson",
-        "hsize": 40,
-        "colw": 412,
-    },
-    {
-        "id": "03-omnia-bio",
-        "foto": "omnia.jpeg",
-        "eyebrow": "VIN DIN STRUGURI ECOLOGICI",
-        "titlu": "Omnia mea mecum porto",
-        "text": "Tot ce am, port cu mine. Gama ecologică a casei, din 2010: Fetească Neagră, "
-                "Băbească Neagră, Riesling Italian. Fără erbicide, fără insecticide, fără îngrășăminte de sinteză.",
-        "cta": "Descoperă Omnia",
-        "hsize": 44,
-        "colw": 430,
-    },
-    {
-        "id": "04-private-reserve",
+        "id": "01-private-reserve",
         "foto": "private-reserve.jpeg",
         "eyebrow": "PRIVATE RESERVE",
         "titlu": "Cadoul care nu ajunge în sertar",
@@ -191,19 +186,18 @@ BANNERE = [
         "colw": 430,
     },
     {
-        "id": "05-inima",
-        "foto": "inima-b.jpeg",
-        "eyebrow": "SERIA INIMA",
-        "titlu": "Soiuri românești pure, fără ocolișuri",
-        "text": "Roșu, rosé și alb din struguri ecologici. Vinul de masă de duminică, "
-                "făcut cu aceeași metodă ca vinurile de colecție.",
-        "cta": "Vezi seria Inima",
-        "hsize": 41,
-        "colw": 430,
-        "fade": 230,
+        "id": "02-grui",
+        "foto": "grui.jpeg",
+        "eyebrow": "SERIA GRUI",
+        "titlu": "Vinul poartă numele dealului din care vine",
+        "text": "Grui — dealul pe care crește via. Fetească Neagră și Sauvignon Blanc, "
+                "din soiuri lucrate ecologic, cu stropiri reduse la minimul necesar.",
+        "cta": "Descoperă Grui",
+        "hsize": 40,
+        "colw": 420,
     },
     {
-        "id": "06-hereditas",
+        "id": "03-hereditas",
         "foto": "hereditas.jpeg",
         "eyebrow": "HEREDITAS · GAMĂ ECOLOGICĂ",
         "titlu": "Ce moștenim, ce lăsăm mai departe",
@@ -214,8 +208,33 @@ BANNERE = [
         "colw": 430,
     },
     {
-        "id": "07-transport-gratuit",
-        "foto": "grui.jpeg",
+        "id": "04-glia",
+        "foto": "glia-a.jpeg",
+        "eyebrow": "SERIA GLIA · ȘARBĂ",
+        "titlu": "Glie: pământ roditor",
+        "text": "Șarba se simte acasă la Odobești și aproape nicăieri altundeva. Alb sec, "
+                "cu aciditate vie și un final curat — vinul pentru mâncarea simplă și bună.",
+        "cta": "Comandă Glia",
+        "hsize": 46,
+        "colw": 400,
+        "fade": 200,
+    },
+    {
+        "id": "05-casa-neacsu",
+        "foto": "casa-neacsu-marca.jpeg",
+        "layout": "fundal",
+        "eyebrow": "VINURI PURE ROMÂNEȘTI",
+        "titlu": "Cea mai largă colecție de soiuri românești lucrate ecologic",
+        "text": "Peste douăzeci de soiuri, românești și internaționale, în sistem ecologic din 2010. "
+                "De la vinul de duminică până la ediții numerotate.",
+        "cta": "Vezi toate vinurile",
+        "hsize": 36,
+        "colw": 585,
+        "ytop": 172,
+    },
+    {
+        "id": "06-transport-gratuit",
+        "foto": "inima-a.jpeg",
         "eyebrow": "COMANDĂ DIRECT DE LA CRAMĂ",
         "titlu": "Transport gratuit peste [VALOARE] lei",
         "text": "Vinul pleacă din cramă și ajunge la tine în [NR] zile lucrătoare. "
@@ -223,6 +242,7 @@ BANNERE = [
         "cta": "Cumpără acum",
         "hsize": 42,
         "colw": 430,
+        "fade": 230,
     },
 ]
 
