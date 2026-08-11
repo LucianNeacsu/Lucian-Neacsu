@@ -85,10 +85,10 @@ devreme, pe circa 60% mai mult teren.
 
 ## 2. Cele patru avantaje (ordinea contează)
 
-1. **Vechimea în bio.** Via a fost convertită în sistem ecologic în **2010**,
-   printre primii producători din România care au făcut-o pe suprafețe de
-   **peste 15 hectare**. Un an și o suprafață nu se pot inventa retroactiv —
-   este singura afirmație pe care un concurent nu o poate copia.
+1. **Vechimea în bio.** Conversia a început în anii 2000; prima producție cu
+   certificare organică a fost în **2010, pe 245 de hectare compacte**. Un an
+   și o suprafață nu se pot inventa retroactiv — este singura afirmație pe care
+   un concurent nu o poate copia. Vezi cronologia completă la 1c.
 2. **Metoda.** Stropiri reduse la **minimul necesar**, cu **macerate de plante**
    preparate în cramă. Fără insecticide, fără erbicide, fără îngrășăminte de
    sinteză. Cu **pierderi de producție asumate** în fiecare an.
