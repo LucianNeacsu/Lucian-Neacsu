@@ -1,60 +1,62 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Acest fișier oferă indicații pentru Claude Code (claude.ai/code) atunci când lucrează cu codul din acest repository.
 
-## Project overview
+## Prezentare generală a proiectului
 
-This is a small, beginner-oriented Python project that watches a video feed (a
-webcam or an IP/NVR camera over RTSP) and alerts on motion by saving a
-snapshot. It is explicitly framed (in `README.md`) as a first hands-on
-exercise for someone new to programming, with "next steps" ideas (email
-alerts, running as a background service, cleanup of old snapshots, AI-based
-person/animal detection) left for future sessions.
+Acesta este un proiect Python mic, gândit pentru începători, care urmărește un
+flux video (o webcam sau o cameră IP/NVR prin RTSP) și alertează la detectarea
+mișcării, salvând o poză. Este prezentat explicit (în `README.md`) ca o primă
+temă practică pentru cineva care abia începe să programeze, cu idei de "pași
+următori" (alerte pe email, rulare ca serviciu de fundal, curățarea automată a
+pozelor vechi, detecție bazată pe AI pentru persoane/animale) lăsate pentru
+sesiuni viitoare.
 
-All user-facing documentation and in-code comments are written in Romanian —
-match that language when editing `README.md` or comments in the existing
-scripts, and keep explanations beginner-friendly (the README even calls out
-which programming concepts — variables, functions, `while` loops, `if`
-conditions — each part of the code demonstrates).
+Toată documentația vizibilă utilizatorului și comentariile din cod sunt scrise
+în română — păstrează această limbă când editezi `README.md` sau comentariile
+din scripturile existente și menține explicațiile pe înțelesul unui începător
+(README-ul chiar enumeră ce concepte de programare — variabile, funcții,
+bucle `while`, condiții `if` — demonstrează fiecare parte a codului).
 
-## Commands
+## Comenzi
 
 ```bash
-# Install the only dependency (opencv-python)
+# Instalează singura dependență (opencv-python)
 pip install -r requirements.txt
 
-# One-shot connectivity check: connects once, saves test_poza.jpg, then exits
+# Test rapid de conexiune: se conectează o singură dată, salvează test_poza.jpg, apoi iese
 python test_camera.py
 
-# Continuous motion-detection loop (Ctrl+C to stop)
+# Bucla continuă de detecție a mișcării (Ctrl+C pentru oprire)
 python motion_alert.py
 ```
 
-There is no build step, linter, or test suite configured in this repo.
+Nu există pas de build, linter sau suite de teste configurate în acest repo.
 
-Both scripts read the video source from the `CAMERA_SOURCE` environment
-variable (an RTSP URL such as `rtsp://user:pass@192.168.1.50:554/stream1`);
-if unset, they default to `0`, the local webcam. Never hardcode camera
-credentials in source — always pass them via `CAMERA_SOURCE`.
+Ambele scripturi citesc sursa video din variabila de mediu `CAMERA_SOURCE` (un
+URL RTSP de forma `rtsp://user:parola@192.168.1.50:554/stream1`); dacă nu e
+setată, folosesc implicit `0`, webcam-ul local. Nu scrie niciodată credențiale
+de cameră direct în cod — transmite-le mereu prin `CAMERA_SOURCE`.
 
-## Architecture
+## Arhitectură
 
-- `test_camera.py` — minimal sanity check. Opens `VIDEO_SOURCE` once, reads a
-  single frame, writes it to `test_poza.jpg`, and exits with a clear
-  OK/EROARE message. Meant to be run before `motion_alert.py` to confirm the
-  RTSP address/credentials are correct.
-- `motion_alert.py` — the actual detector, structured as:
-  1. `VIDEO_SOURCE` / `MOTION_THRESHOLD` / `MIN_MOTION_AREA` /
-     `ALERT_COOLDOWN_SECONDS` module-level constants — the intended place to
-     tune behavior without touching the loop logic.
-  2. `send_alert(frame, timestamp)` — writes a snapshot into `snapshots/`
-     (created on demand, gitignored) and prints an alert message; this is the
-     designated extension point for future notification channels (e.g.
-     email/SMS) mentioned in the README's "next steps".
-  3. `main()` — opens the capture, then loops: read a frame, convert to
-     grayscale + blur, diff against the previous frame, threshold + dilate,
-     find contours, and treat any contour above `MIN_MOTION_AREA` as motion.
-     `ALERT_COOLDOWN_SECONDS` throttles repeated alerts for sustained motion.
+- `test_camera.py` — verificare minimă de sănătate. Deschide `VIDEO_SOURCE` o
+  singură dată, citește un cadru, îl salvează în `test_poza.jpg` și iese cu un
+  mesaj clar OK/EROARE. Menit să fie rulat înainte de `motion_alert.py` pentru
+  a confirma că adresa RTSP/credențialele sunt corecte.
+- `motion_alert.py` — detectorul propriu-zis, structurat astfel:
+  1. Constantele la nivel de modul `VIDEO_SOURCE` / `MOTION_THRESHOLD` /
+     `MIN_MOTION_AREA` / `ALERT_COOLDOWN_SECONDS` — locul intenționat pentru a
+     ajusta comportamentul fără a atinge logica buclei.
+  2. `send_alert(frame, timestamp)` — salvează o poză în `snapshots/` (creat
+     la nevoie, exclus din git) și afișează un mesaj de alertă; acesta este
+     punctul de extensie desemnat pentru viitoare canale de notificare (ex.
+     email/SMS) menționate la "pași următori" din README.
+  3. `main()` — deschide captura, apoi repetă în buclă: citește un cadru,
+     convertește la grayscale + blur, calculează diferența față de cadrul
+     anterior, aplică threshold + dilate, găsește contururi și tratează orice
+     contur mai mare decât `MIN_MOTION_AREA` ca mișcare. `ALERT_COOLDOWN_SECONDS`
+     limitează alertele repetate pentru mișcare susținută.
 
-There are no other modules — both files are self-contained scripts sharing
-the same `CAMERA_SOURCE` env var convention.
+Nu există alte module — ambele fișiere sunt scripturi de sine stătătoare care
+folosesc aceeași convenție a variabilei de mediu `CAMERA_SOURCE`.
