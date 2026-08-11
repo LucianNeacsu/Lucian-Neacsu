@@ -26,6 +26,32 @@ Acesta este cel mai valoros material nefolosit din tot pachetul. Un fondator
 cu chip, nume și treizeci de ani de muncă în spate convinge mai mult decât
 orice text scris — pe TikTok și pe YouTube, în special.
 
+## 1b. Date verificate din catalogul 2023
+
+Sursa: `brand/CN2023-Cramele-Odobesti.pdf`, catalogul oficial de export.
+
+- **Înființare: 1991.** Unul dintre primii producători de vin din istoria
+  modernă (post-1989) a viticulturii românești.
+- Sediu: **DN 2D, km 10, Odobești, Vrancea**.
+- Contact din catalog: `office@crameleodobesti.ro`, `export@crameleodobesti.ro`,
+  Lucian Neacșu, `+40 788 237 001`.
+- Două crame funcționale. Îmbuteliere 25.000 de sticle pe schimb, depozitare
+  4.000.000 litri, producție 2.000.000 litri pe an din vie proprie
+  (capacitatea poate crește de 3–4 ori, în funcție de comandă).
+- Structura portofoliului: **70% soiuri românești, 30% internaționale**.
+- Zona: acces la cea mai mare suprafață viticolă compactă din România,
+  aproximativ 25.000 ha pe o rază apropiată.
+- Podgoria de la **Însurăței** este prezentată drept cea mai mare plantație
+  ecologică din sud-estul Europei. De acolo vin gamele Omnia și Hereditas.
+
+**Contradicție de rezolvat.** Catalogul spune „producem vinuri ecologice de
+peste 20 de ani", ceea ce plasează începutul înainte de 2003. Materialele de
+social media spun 2010, cu peste 15 hectare convertite. Cele două nu pot fi
+adevărate simultan în aceeași formulare. Stabiliți varianta corectă — probabil
+practică ecologică mai veche, certificare pe suprafață mare în 2010 — și
+folosiți-o identic peste tot. O afirmație de vechime contestată public
+distruge exact argumentul pe care se sprijină tot restul.
+
 ## 2. Cele patru avantaje (ordinea contează)
 
 1. **Vechimea în bio.** Via a fost convertită în sistem ecologic în **2010**,
@@ -61,8 +87,28 @@ Funcționează **numai** cât rămâne despre efortul cramei. Vezi secțiunea 6.
 
 Alte serii din portofoliu, confirmate din prezentarea internă: **Inima**,
 **Koson**, **Grui**, **Vinuri de Poveste**, **Private Reserve**, **Casa Neacșu
-Rezervă**. Din site: Nora, Varius, Vița de Vie.
-Ambalare: sticlă clasică și bag-in-box.
+Rezervă**. Ambalare: sticlă clasică și bag-in-box.
+
+### Serii descrise în catalogul de export 2023
+
+| Serie | Soiuri | Ce spune catalogul |
+|---|---|---|
+| **Monșer** | Crâmpoșie, Fetească Albă, Zghihară de Huși, Fetească Regală, Fetească Neagră, Băbească Neagră | soiuri românești; numele din opera lui Caragiale, atmosfera de La Belle Époque |
+| **Varius** | Cabernet Sauvignon, Merlot, Sauvignon Blanc, Riesling | dedicată soiurilor internaționale; „varius" = varietate, în latină |
+| **Cuza Vodă** | Băbească Neagră, Cabernet Sauvignon, Merlot | numele vine de la Alexandru Ioan Cuza |
+| **Glia** | Șarbă, Fetească Neagră, Băbească Neagră | gama de vârf a soiurilor românești, **învechită minimum 3 ani la sticlă** |
+| **Suav** | Busuioacă de Bohotin, Muscat Ottonel, Tămâioasă Românească | vinuri dulci, delicate și rafinate |
+| **Vița de Vie** | Riesling, Băbească Neagră, rosé, Cabernet Sauvignon & Băbească Neagră | tema Dionysos; via la aceeași latitudine cu Bordeaux, Burgundia și Piemont |
+| **Hereditas** | Băbească Neagră, Chardonnay, Riesling Italian *(vezi nota)* | ecologic, din Însurăței; pe etichetă, dropul de pe Terasele Dunării |
+| **Omnia** | Fetească Neagră, Băbească Neagră, Riesling Italian | **primul vin ecologic lansat în România**, din Însurăței |
+| **Secolul 13** | Băbească Neagră, Riesling Italian, Chardonnay, Fetească Neagră | gamă premium, integral ecologică, din producții mici |
+| **Occultus** | Grand Reserve: 35% Cabernet Sauvignon, 30% Merlot, 20% Fetească Neagră, 15% Băbească Neagră | super-premium; „occultus" = ascuns, tăinuit |
+| **Casa Neacșu Collection Pack** | Sauvignon Blanc & Riesling Italian, Muscat Ottonel, Crâmpoșie | pachet cadou cu trei albe |
+| **Ediții speciale** | Băbească Neagră & Cabernet Sauvignon, rosé | aniversare și Ziua Îndrăgostiților, sub marca Cupidon |
+
+**Notă la Hereditas:** catalogul listează Fetească Neagră, dar fotografia de
+produs arată Chardonnay. Componența gamei pare să se fi schimbat între timp.
+Materialele urmează fotografia; verificați ce este corect astăzi.
 
 ### Soiuri, pe categorii
 

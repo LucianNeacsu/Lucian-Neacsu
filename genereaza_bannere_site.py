@@ -201,8 +201,8 @@ BANNERE = [
         "foto": "hereditas.jpeg",
         "eyebrow": "HEREDITAS · GAMĂ ECOLOGICĂ",
         "titlu": "Ce moștenim, ce lăsăm mai departe",
-        "text": "Fetească Albă și Băbească Neagră, lucrate ecologic. Două soiuri românești "
-                "care erau aici înaintea noastră și vor fi și după.",
+        "text": "Băbească Neagră, Chardonnay și Riesling Italian, din Însurăței. Pe etichetă, "
+                "dropul de pe Terasele Dunării — pasărea locului, semnul legăturii dintre om și pământ.",
         "cta": "Descoperă Hereditas",
         "hsize": 42,
         "colw": 430,
@@ -212,8 +212,8 @@ BANNERE = [
         "foto": "glia-a.jpeg",
         "eyebrow": "SERIA GLIA · ȘARBĂ",
         "titlu": "Glie: pământ roditor",
-        "text": "Șarba se simte acasă la Odobești și aproape nicăieri altundeva. Alb sec, "
-                "cu aciditate vie și un final curat — vinul pentru mâncarea simplă și bună.",
+        "text": "Șarba se simte acasă la Odobești și aproape nicăieri altundeva. Gama de vârf a "
+                "soiurilor românești, învechită minimum trei ani la sticlă.",
         "cta": "Comandă Glia",
         "hsize": 46,
         "colw": 400,
@@ -221,16 +221,16 @@ BANNERE = [
     },
     {
         "id": "05-casa-neacsu",
-        "foto": "casa-neacsu-marca.jpeg",
-        "layout": "fundal",
-        "eyebrow": "VINURI PURE ROMÂNEȘTI",
-        "titlu": "Cea mai largă colecție de soiuri românești lucrate ecologic",
-        "text": "Peste douăzeci de soiuri, românești și internaționale, în sistem ecologic din 2010. "
-                "De la vinul de duminică până la ediții numerotate.",
-        "cta": "Vezi toate vinurile",
-        "hsize": 36,
-        "colw": 585,
-        "ytop": 172,
+        "foto": "casa-neacsu-pachet.jpeg",
+        "eyebrow": "CASA NEACȘU · PACHET DE COLECȚIE",
+        "titlu": "Trei albe într-o cutie de colecție",
+        "text": "Sauvignon Blanc & Riesling Italian, Muscat Ottonel și Crâmpoșie. Rădăcina de pe "
+                "etichetă spune tot: aceleași soiuri, același deal, lucrate ecologic. "
+                "Cadou gata făcut sau primul pas prin gamele casei.",
+        "cta": "Comandă pachetul",
+        "hsize": 42,
+        "colw": 560,
+        "fade": 220,
     },
     {
         "id": "06-transport-gratuit",
