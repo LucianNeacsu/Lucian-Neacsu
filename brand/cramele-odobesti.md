@@ -44,13 +44,44 @@ Sursa: `brand/CN2023-Cramele-Odobesti.pdf`, catalogul oficial de export.
 - Podgoria de la **Însurăței** este prezentată drept cea mai mare plantație
   ecologică din sud-estul Europei. De acolo vin gamele Omnia și Hereditas.
 
-**Contradicție de rezolvat.** Catalogul spune „producem vinuri ecologice de
-peste 20 de ani", ceea ce plasează începutul înainte de 2003. Materialele de
-social media spun 2010, cu peste 15 hectare convertite. Cele două nu pot fi
-adevărate simultan în aceeași formulare. Stabiliți varianta corectă — probabil
-practică ecologică mai veche, certificare pe suprafață mare în 2010 — și
-folosiți-o identic peste tot. O afirmație de vechime contestată public
-distruge exact argumentul pe care se sprijină tot restul.
+## 1c. Cronologia ecologică — formularea oficială
+
+Confirmată de Lucian Neacșu. Se folosește identic în toate materialele:
+
+| Perioadă | Ce s-a întâmplat |
+|---|---|
+| **anii 2000** | începe conversia în sistem ecologic |
+| **până în 2009** | vin produs din struguri **în conversie** (se lucrează ecologic, dar producția nu poate purta încă certificarea) |
+| **2010** | **prima producție cu certificare organică, pe 245 de hectare compacte** |
+
+> „Am început conversia în anii 2000. Până în 2009 am făcut vin din struguri în
+> conversie. Prima producție cu certificare organică a fost în 2010, pe 245 de
+> hectare compacte."
+
+Aceasta explică și „peste 20 de ani" din catalogul de export (practica), și
+anul 2010 (certificarea). Ambele erau adevărate, dar despre lucruri diferite.
+
+**Atenție:** materialele produse înainte de această clarificare spun „peste 15
+hectare". Cifra este corectă ca prag, dar subevaluează de peste șaisprezece
+ori suprafața reală. La orice regenerare, se folosește **245 de hectare
+compacte**.
+
+**Reper competitiv:** Domeniul Bogdan, cramă care deține astăzi teritoriul
+mental „bio" în România, a obținut certificarea ecologică în 2016–2017, pe 154
+de hectare. Casa Neacșu are prima producție certificată cu șase-șapte ani mai
+devreme, pe circa 60% mai mult teren.
+
+## 1d. Decizii comerciale stabilite
+
+- **Transport gratuit: peste 199 lei.** Sub grupul dens al pieței (200–250 lei)
+  și sub pragul psihologic de 200. Se afișează cu bară de progres în coș.
+- **Prețurile nu se modifică.** Majoritatea portofoliului sunt vinuri de
+  colecție, din struguri certificați ecologic din 2010. Comunicarea nu
+  negociază prețul — îl justifică: anul certificării, anii de învechire,
+  tirajul, raritatea soiului. Nicio comparație cu raftul de supermarket.
+- **Publicul se îngustează deliberat.** La preț de colecție, un vizitator venit
+  după ieftin costă bani fără să cumpere. Reclamele vizează cadoul, ocazia și
+  colecționarul, nu „vin bun la preț bun".
 
 ## 2. Cele patru avantaje (ordinea contează)
 
