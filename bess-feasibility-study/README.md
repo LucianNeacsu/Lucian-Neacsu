@@ -21,10 +21,34 @@ bess-feasibility-study/
 ├── scripts/
 │   ├── extract_model.py                xlsx → data/model_values.json
 │   ├── fill_docx.py                    json + template → output/*.docx
-│   └── generate.sh                     rulează cei doi pași de mai sus
+│   ├── generate.sh                     rulează cei doi pași de mai sus
+│   └── add_china_scenario.py           adaugă/actualizează foaia ScenariuChina în xlsx
 ├── data/model_values.json              (generat)
 └── output/SF_Cramele_Odobesti_BESS.docx  (generat — livrabilul)
 ```
+
+## Scenariul alternativ: reper de cost China
+
+`model/model_financiar.xlsx` conține și o foaie `ScenariuChina`, adăugată cu
+`scripts/add_china_scenario.py`, care recalculează integral bugetul,
+finanțarea și fluxul de numerar folosind un reper de cost turnkey din China
+(implicit 73.000 USD/MWh, BNEF/Ember 2025-2026) în loc de reperul Europa din
+`Ipoteze!C22` (177.000 USD/MWh) — toate celelalte ipoteze rămân legate de
+foaia `Ipoteze`. Foaia include și un tabel de comparație Europa vs. China.
+
+Cu reperele de test actuale, diferența e mare: investiția totală scade de la
+~43,3 mil. EUR la ~19,4 mil. EUR, contribuția proprie de la ~32,3 la ~8,4 mil.
+EUR, iar VAN trece din negativ (~‑11 mil. EUR) în pozitiv (~+14,2 mil. EUR),
+cu RIR de ~31% și termen de recuperare de ~4 ani (față de 13 ani). Este o
+ilustrare a sensibilității proiectului la costul unitar de echipamente, **nu
+o ofertă și nu o recomandare de furnizor** — vezi avertismentul din foaie
+despre taxe vamale UE, certificare CE și costul de service local pe termen
+lung, care nu sunt incluse în acest reper.
+
+Pentru a rula `python3 scripts/extract_model.py` din nou fetch cu valori
+proaspete după orice editare manuală a modelului, deschide întâi
+`model_financiar.xlsx` în Excel sau LibreOffice și salvează-l o dată — fișierul
+are `fullCalcOnLoad` activat, deci recalculează automat tot la deschidere.
 
 ## Cum îl rulezi
 
