@@ -1,0 +1,20 @@
+{
+  "capacitate_mwh": 200,
+  "putere_mw": 50,
+  "durata_stocare_ore": 4,
+  "capex_total_eur": 43271360,
+  "capex_unitar_eur_mwh": 216356.8,
+  "capex_eligibil_eur": 37501800,
+  "capex_linie_racord_eur": 880000.0000000001,
+  "capex_statie_conexiune_eur": 1500000,
+  "capex_constructii_civile_eur": 2548800,
+  "capex_sisteme_siguranta_eur": 1593000,
+  "energie_descarcata_an1_mwh": 52920,
+  "grant_eur": 11000000,
+  "contributie_proprie_eur": 32271360,
+  "pondere_grant": 0.2542097128447084,
+  "ebitda_an1_eur": 2576652.192,
+  "van_eur": -10964357.335552603,
+  "rir": 0.017875021154783344,
+  "payback_ani": 13
+}
